@@ -1,11 +1,16 @@
 "use client"
 
-import { Button } from "./ui/button"
+import { bundleAction } from "@/lib/server/bundle"
+import { Button } from "@/components/ui/button"
 
-export const BundlerExec = async () => {
-  return
-  <>
-    <Button className="mt-4" onClick={bundle()}
-    }>Bundle</Button>i
-  </>
+export default function BundlerExec() {
+  return (
+    <>
+      <Button className="mt-4"
+        onClick={() => bundleAction()}
+      >
+        Bundle
+      </Button>
+    </>
+  )
 }

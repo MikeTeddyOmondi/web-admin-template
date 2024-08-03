@@ -2,6 +2,8 @@
 
 import { bundle } from "bundler"
 
-async function bundle(){
-          await bundle()
+async function bundleAction() {
+  await bundle()
 }
+
+export { bundleAction }

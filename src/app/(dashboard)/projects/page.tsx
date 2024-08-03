@@ -1,4 +1,6 @@
-import { BundlerExec } from "@/components/BundlerExec"
+import { Suspense } from 'react'
+// import dynamic from 'next/dynamic'
+import BundlerExec from "@/components/BundlerExec"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -13,6 +15,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 import { PlusCircle } from "lucide-react"
+// const BundlerExec = dynamic(() => import("@/components/BundlerExec"), { ssr: false })
 
 export default function Projects() {
   return (
@@ -68,7 +71,9 @@ export default function Projects() {
             <SheetTrigger>
               <Button className="mt-4">Add Project</Button>
             </SheetTrigger>
-            <BundlerExec />
+            <Suspense fallback={"Loading..."}>
+              <BundlerExec />
+            </Suspense>
           </div>
         </div>
 
